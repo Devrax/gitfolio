@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap');
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --delay: 0.05s;
+  --text-content: '100';
+}
+
+html, body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.max-width{
+  max-width: 1024px;
+}
+
+.cupertino-pane-wrapper.darkmode .pane {
+  @apply bg-gray-800;
+  @apply text-white;
+}
+
+/* Being use at InformationProjects */
+.ghost{
+  @apply relative;
+}
+
+.ghost:after{
+  content: '';
+  @apply absolute;
+  @apply z-10;
+  width: 10px;
+  height: 200px;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(35, 49, 66, 1));
+  top: 0;
+  right: -0.5px;
+}
+
+.ghost:before{
+  content: '';
+  @apply absolute;
+  @apply z-10;
+  width: 10px;
+  height: 200px;
+  background-image: linear-gradient(90deg, rgba(35, 49, 66, 1), rgba(255, 255, 255, 0));
+}
+
+/* Being use at AppProgress */
+.progress-bar{
+  @apply relative;
+  @apply overflow-hidden;
+  @apply rounded;
+}
+
+.progress-bar:before{
+  content: '';
+  @apply absolute;
+  @apply w-full;
+  @apply h-full;
+  @apply bg-pacific-700;
+  box-shadow: inset -3px 2px 10px -1px #00000066;
+}
+
+/* ANIMATIONS */
+.fade-entry-enter-active,
+.fade-entry-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-entry-enter-from,
+.fade-entry-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s calc(var(--delay) * 10) ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s calc(var(--delay) * 10) ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: scale(0.5);
+} 
