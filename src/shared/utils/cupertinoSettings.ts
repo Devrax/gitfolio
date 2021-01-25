@@ -14,12 +14,12 @@ export const cupertinoOptions: CupertinoSettings = {
         },
         middle: { 
             enabled: true,
-            height: vph - (vph*50/100), 
+            height: vph - (vph*40/100), 
             bounce: true 
         },
         bottom: {
             enabled: true,
-            height: vph - (vph*70/100), 
+            height: vph - (vph*60/100), 
             bounce: true 
         }
       }        

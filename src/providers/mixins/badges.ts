@@ -19,6 +19,22 @@ export const badges = ref<Badge[]>([
         logoColor: 'white'
     },
     {
+        label: 'Scss',
+        labelColor: 'CC6699',
+        color: 'CC6699',
+        style: 'plastic',
+        logo: 'Sass',
+        logoColor: 'white'
+    },
+    {
+        label: 'Sass',
+        labelColor: 'CC6699',
+        color: 'CC6699',
+        style: 'plastic',
+        logo: 'Sass',
+        logoColor: 'white'
+    },
+    {
         label: 'Angular',
         labelColor: 'd8614b',
         color: 'red',

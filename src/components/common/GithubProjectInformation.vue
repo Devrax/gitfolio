@@ -1,10 +1,9 @@
 <template>
 
-    <div>
-        <section class="px-3 pt-5" v-if="!!props">
+    <section class="px-3 pt-5">
         <div>
             <h2 class="text-4xl text-orange-400">
-                <a :href="props.html_url" target="_blank" class="underline" >{{ props.name }}</a>
+                <a :href="props.html_url" target="_blank" class="underline" >{{ props?.name }}</a>
             </h2>
             <transition-group appear tag="div" name="list" class="flex flex-wrap mt-2">
                 <!-- --delay css variable is being use for Staggering-->
@@ -23,7 +22,7 @@
                     <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
                 </span>
                 <span class="ml-1">
-                    {{ props.license.name }}
+                    {{ props?.license?.name || 'Unlicensed'}}
                 </span>
                 ||
                 <span>
@@ -31,11 +30,10 @@
                 </span>
             </div>
             <p>
-                {{ props.description }}
+                {{ props?.description || 'No description'}}
             </p>
         </div>
     </section>
-    </div>
 
 </template>
 
@@ -49,9 +47,7 @@ import { githubRepoLanguages } from '../../providers/request/github';
 export default defineComponent({
     name: 'GithubProjectInformation',
     setup() {
-
-        const propsInject = inject<Ref<IGithubUserRepo>>('custom-props');
-        const props = ref(null);
+        const props = inject<Ref<IGithubUserRepo>>('custom-props');
         const projectLanguages = ref<string[]>([]);
 
         const fetchAllLanguages = async (api: string) => {
@@ -65,18 +61,12 @@ export default defineComponent({
             return new Date(props.value.created_at).toLocaleString('en-US', { year: 'numeric', month: 'short', weekday: 'long', day: '2-digit' })
         })
 
-        watch(propsInject, (neo) => {
-            if(!!neo) {
-                props.value = neo;
-                fetchAllLanguages(neo.languages_url);
-            }
+        watch(props, (neo) => {
+            fetchAllLanguages(neo.languages_url);
         })
 
         onMounted(() => {
-            if(!!propsInject.value) {
-                props.value = propsInject.value;
-                fetchAllLanguages(props.value.languages_url);
-            }
+            fetchAllLanguages(props.value.languages_url);
         })
 
         return {
