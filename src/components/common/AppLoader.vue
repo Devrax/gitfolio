@@ -95,7 +95,7 @@ export default defineComponent({
 
         const FTO = setTimeout(() => {
             msg.value = "It's taking too much time";
-        }, 4000);
+        }, 6000);
 
         const STO = setTimeout(() => {
             
@@ -103,14 +103,14 @@ export default defineComponent({
             const notLoad = entries.filter(el => !el.e);
 
             if(notLoad.length === entries.length) {
-                msg.value = "I can't show you my portfolio with that net dude :(";    
+                msg.value = "Your net is pretty slow, are you using Claro or Altice?";    
             } else {
                 const prepareMsg = notLoad.map(el => el.n);
-                msg.value = `It's seems that ${prepareMsg.join(', ')} couldn't load correctly :(`
+                msg.value = `It's seems that ${prepareMsg.join(', ')} are not loading correctly :(`
             }
 
             shouldStop.value = true;
-        }, 8000)
+        }, 10000)
 
         const stopTimeout = () => {
             const condition =  expectedEntries.value.every(el => el.expect);
