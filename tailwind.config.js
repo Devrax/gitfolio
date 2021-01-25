@@ -223,6 +223,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        '"Josefin Sans", sans-serif',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -236,10 +237,9 @@ module.exports = {
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-        '"Josefin Sans", sans-serif'
+        '"Noto Color Emoji"'
       ],
-      serif: ['"Cherry Cream Soda"','ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
         'ui-monospace',
         'SFMono-Regular',
