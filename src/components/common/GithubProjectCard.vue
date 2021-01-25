@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="cursor-pointer card-btn transform transition-all overflow-hidden scale-95 hover:scale-100 active:scale-95 relative rounded-2xl mr-3 snap-center" 
+        class="cursor-pointer card-btn transform transition-all overflow-hidden scale-95 hover:scale-100 active:scale-90 relative rounded-2xl mr-3 snap-center" 
         style="min-width: 250px;height: 200px;">
         <img :src="randomPic" class="w-full h-full object-cover transform transition-all" >
         <div class="absolute bg-gradient-to-b from-transparent h-full to-pacific-900 top-0 w-full"></div>
@@ -69,6 +69,6 @@ export default defineComponent({
     }
 
     .card-btn:active {
-        @apply scale-95;
+        transform: scale(0.9) !important;
     }
 </style>
