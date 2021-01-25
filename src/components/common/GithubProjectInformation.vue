@@ -58,15 +58,15 @@ export default defineComponent({
         const { mappedBadge } = mapBadge();
 
         const readableDate = computed(() => {
-            return new Date(props.value.created_at).toLocaleString('en-US', { year: 'numeric', month: 'short', weekday: 'long', day: '2-digit' })
+            return new Date(props!.value.created_at).toLocaleString('en-US', { year: 'numeric', month: 'short', weekday: 'long', day: '2-digit' })
         })
 
-        watch(props, (neo) => {
+        watch(props!, (neo: IGithubUserRepo) => {
             fetchAllLanguages(neo.languages_url);
         })
 
         onMounted(() => {
-            fetchAllLanguages(props.value.languages_url);
+            fetchAllLanguages(props!.value.languages_url);
         })
 
         return {

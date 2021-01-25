@@ -133,7 +133,7 @@ export const badges = ref<Badge[]>([
 ])
 
 export function mapBadge() {
-    const mappedBadge = (language) => {
+    const mappedBadge = (language: string) => {
 
         if(language == null) return `https://img.shields.io/badge/-Doc-lightgray?style=plastic&labelColor=critical&logoColor=white&logo=Read the Docs`
 

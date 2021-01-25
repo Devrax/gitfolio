@@ -1,5 +1,5 @@
 <template>
-    <img class="lg:object-cover" src="src/assets/background.png" alt="background">
+    <img class="lg:object-cover" src="../../assets/background.png" alt="background">
 </template>
 
 <script lang="ts">
