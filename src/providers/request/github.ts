@@ -10,8 +10,7 @@ const STOREREPOS = ref<IGithubUserRepo[] | null>(null);
 
 const headers: Headers = new Headers({ 
     Authorization: `token ${APIKEY}`, 
-    'content-type': 'application/json; charset=utf-8', 
-    'cache-control': 'public, max-age=60, s-maxage=60'
+    'content-type': 'application/json; charset=utf-8'
 });
 
 const USERINFORMATION = GET<IGithubUser>(`${APIURL}/users/${USER}`, { headers });
