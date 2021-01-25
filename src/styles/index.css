@@ -8,6 +8,10 @@
   --text-content: '100';
 }
 
+html, body {
+  @apply bg-pacific-900;
+}
+
 .max-width{
   max-width: 1024px;
 }
