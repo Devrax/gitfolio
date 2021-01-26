@@ -22,7 +22,7 @@ export default defineComponent({
     props: {
         stats: {
             type: Object as PropType<ICodewarsUser>,
-            default: function (): ICodewarsUser {
+            default: function (): ICodewarsUser | null {
                 return null
             },
             required: true

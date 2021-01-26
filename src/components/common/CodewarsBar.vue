@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <h4 class="text-2xl text-white">
+    <div class="mt-5">
+        <h4 class="text-2xl text-orange-400">
             {{ uppercase }}
         </h4>
         <div class="flex flex-row text-white">
             <CodewarsKarateBelt class="h-6 w-6" :color="details.color" style="flex: 1;"/>
-            <span style="flex: 1">{{ details.name }}</span>
+            <span class="text-xl font-semibold" style="flex: 1">{{ details.name }}</span>
             <AppProgress style="flex: 5" :score="totalScore"/>
         </div>
     </div>

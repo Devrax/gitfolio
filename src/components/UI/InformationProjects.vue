@@ -43,13 +43,13 @@ export default defineComponent({
         })
 
         const openProject = debouncer(async (project: IGithubUserRepo) => {
-            providerProps.value = project;
-            temporalComponent.value = (GithubProjectInformation as DefineComponent<any, any, any>)
+            providerProps!.value = project;
+            temporalComponent!.value = (GithubProjectInformation as DefineComponent<any, any, any>)
             
-            const isHidden = cupertinoInstance.value.isHidden();
+            const isHidden = cupertinoInstance!.value.isHidden();
             if(isHidden === null || isHidden) {
-                await cupertinoInstance.value.present({ animate: true });
-                cupertinoInstance.value.moveToBreak('bottom');
+                await cupertinoInstance!.value.present({ animate: true });
+                cupertinoInstance!.value.moveToBreak('bottom');
             }
         })
 

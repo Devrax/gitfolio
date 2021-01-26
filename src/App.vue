@@ -111,17 +111,17 @@ export default defineComponent({
     const DEFAULTPIC = ref('../../assets/logo.png');
     const errorFetching = ref(false);
     const cupertinoRef: Ref<typeof VCupertino> = ref(VCupertino);
-    const cupertinoInstance: Ref<CupertinoPane> = ref(null);
+    const cupertinoInstance: Ref<CupertinoPane | null> = ref(null);
     const temporalComponent = shallowRef(AppAttributions);
     const providerProps = ref(null);
 
     provide<Ref<any>>('custom-props', providerProps);
     provide<Ref<any>>('dynamic-component', temporalComponent);
-    provide<Ref<CupertinoPane>>('cupertino-instance', cupertinoInstance);
+    provide<Ref<CupertinoPane | null>>('cupertino-instance', cupertinoInstance);
 
     watch(githubUser, () => {
-      COMPOSENAME.value = `${githubUser.value.name} (${githubUser.value.login})`;
-      DEFAULTPIC.value = githubUser.value.avatar_url;
+      COMPOSENAME.value = `${githubUser.value!.name}`; // (${githubUser.value!.login})
+      DEFAULTPIC.value = githubUser.value!.avatar_url;
     });
 
     const fetchAll = async () => {
@@ -138,10 +138,10 @@ export default defineComponent({
     }
 
     const openAttributions = async () => {
-      if(!(cupertinoInstance.value.isPanePresented())) {
+      if(!(cupertinoInstance.value!.isPanePresented())) {
         temporalComponent.value = (AppAttributions as DefineComponent<{[props: string]: any}>);
-        await cupertinoInstance.value.present({animate: true})
-        cupertinoInstance.value.moveToBreak('top');
+        await cupertinoInstance.value!.present({animate: true})
+        cupertinoInstance.value!.moveToBreak('top');
       } 
     }
 

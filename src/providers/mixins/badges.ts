@@ -1,4 +1,4 @@
-import { Ref, ref } from "vue"
+import { ref } from "vue"
 import { Badge } from "../../models/models"
 
 export const badges = ref<Badge[]>([
@@ -26,14 +26,14 @@ export const badges = ref<Badge[]>([
         logo: 'Sass',
         logoColor: 'white'
     },
-    {
-        label: 'Sass',
-        labelColor: 'CC6699',
-        color: 'CC6699',
-        style: 'plastic',
-        logo: 'Sass',
-        logoColor: 'white'
-    },
+    // {
+    //     label: 'Sass',
+    //     labelColor: 'CC6699',
+    //     color: 'CC6699',
+    //     style: 'plastic',
+    //     logo: 'Sass',
+    //     logoColor: 'white'
+    // },
     {
         label: 'Angular',
         labelColor: 'd8614b',
@@ -98,22 +98,22 @@ export const badges = ref<Badge[]>([
         logo: 'Deno',
         logoColor: 'white'
     },
-    {
-        label: 'Python',
-        labelColor: '3178C6',
-        color: 'f8da59',
-        style: 'plastic',
-        logo: 'Python',
-        logoColor: 'white'
-    },
-    {
-        label: 'Flask',
-        labelColor: '009943',
-        color: '009943',
-        style: 'plastic',
-        logo: 'Flask',
-        logoColor: 'white'
-    },
+    // {
+    //     label: 'Python',
+    //     labelColor: '3178C6',
+    //     color: 'f8da59',
+    //     style: 'plastic',
+    //     logo: 'Python',
+    //     logoColor: 'white'
+    // },
+    // {
+    //     label: 'Flask',
+    //     labelColor: '009943',
+    //     color: '009943',
+    //     style: 'plastic',
+    //     logo: 'Flask',
+    //     logoColor: 'white'
+    // },
     {
         label: 'Webpack',
         labelColor: '8DD6F9',
