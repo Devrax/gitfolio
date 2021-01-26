@@ -2,7 +2,7 @@
     <div class="flex flex-col md:flex-row max-width lg:mx-auto">
         <img :src="pic" :alt="name" class="bg-pacific-900 border-8 border-pacific-900 mx-auto rounded-2xl w-2/4 md:w-4/12 lg:ml-5">
         <div class="md:flex md:flex-col md:justify-end">
-            <h1 class="mx-auto text-4xl text-center text-orange-400 w-11/12 md:text-white md:text-shadow-3xl">{{ name }}</h1>
+            <h1 class="mx-auto text-4xl text-center text-orange-400 w-11/12 md:text-white md:text-shadow-3xl lg:text-6xl">{{ name }}</h1>
             <transition appear name="list">
                 <img v-if="codewarsUser" class="mx-auto my-2 w-11/12 md:w-9/12" :src="codewarsBadge" :alt="codewarsUser">
             </transition>
