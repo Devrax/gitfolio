@@ -4,7 +4,7 @@
       <h2 class="text-2xl text-orange-400">The following icons were taken from:</h2>
       <br>
       <div class="text-orange-400 text-xl">
-        <a href="https://iconscout.com/icons/repo" target="_blank" class="underline">Repo Icon</a> by <a target="_blank" href="https://iconscout.com/contributors/github" class="underline">Github</a> on <a target="_blank" href="https://iconscout.com"  class="underline">Iconscout</a>
+        <a href="https://iconscout.com/icons/repo" target="_blank" rel="noreferrer" class="underline">Repo Icon</a> by <a target="_blank" rel="noreferrer" href="https://iconscout.com/contributors/github" class="underline">Github</a> on <a target="_blank" rel="noreferrer" href="https://iconscout.com"  class="underline">Iconscout</a>
       </div>
 
       <div class="text-center">
@@ -18,9 +18,9 @@
       </div>
       <br>
       <div class="text-orange-400 text-xl">
-        <a class="underline" href="https://www.flaticon.com/" target="_blank" title="Flaticon">flaticon</a> 
+        <a class="underline" href="https://www.flaticon.com/" target="_blank" rel="noreferrer" title="Flaticon">flaticon</a> 
         by 
-        <a class="underline" href="https://www.flaticon.com/authors/icongeek26" target="_blank" title="Icongeek26">Icongeek26</a>
+        <a class="underline" href="https://www.flaticon.com/authors/icongeek26" target="_blank" rel="noreferrer" title="Icongeek26">Icongeek26</a>
       </div>
 
       <div class="text-center">
@@ -30,7 +30,7 @@
       <br>
 
       <div>
-        <a href="https://heroicons.dev/" target="_blank" class="text-orange-400 text-xl underline">Heroicons</a>
+        <a href="https://heroicons.dev/" target="_blank" rel="noreferrer" class="text-orange-400 text-xl underline">Heroicons</a>
       </div>
 
       <div class="text-center">

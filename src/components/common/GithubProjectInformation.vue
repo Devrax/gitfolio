@@ -3,7 +3,7 @@
     <section class="px-3 pt-5">
         <div>
             <h2 class="text-4xl text-orange-400">
-                <a :href="props.html_url" target="_blank" class="underline" >{{ props?.name }}</a>
+                <a :href="props.html_url" target="_blank" rel="noreferrer" class="underline" >{{ props?.name }}</a>
             </h2>
             <transition-group appear tag="div" name="list" class="flex flex-wrap mt-2">
                 <!-- --delay css variable is being use for Staggering-->

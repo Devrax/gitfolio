@@ -6,6 +6,7 @@
 :root{
   --delay: 0.05s;
   --text-content: '100';
+  --gpu-animation: translateZ(0);
 }
 
 html, body {
@@ -65,30 +66,37 @@ html, body {
 /* ANIMATIONS */
 .fade-entry-enter-active,
 .fade-entry-leave-active {
+  transform: var(--gpu-animation);
   transition: opacity 0.5s ease;
 }
 
 .fade-entry-enter-from,
 .fade-entry-leave-to {
+  transform: var(--gpu-animation);
   opacity: 0;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s calc(var(--delay) * 10) ease;
+  transform: var(--gpu-animation);
+  transition-property: opacity;
+  transition: 0.5s calc(var(--delay) * 10) ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
+  transform: var(--gpu-animation);
   opacity: 0;
 }
 
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.3s calc(var(--delay) * 10) ease;
+  transform: var(--gpu-animation);
+  transition-property: opacity, transform;
+  transition: 0.3s calc(var(--delay) * 10) ease;
 }
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: scale(0.5);
+  transform: scale(0.5) var(--gpu-animation);
 } 
