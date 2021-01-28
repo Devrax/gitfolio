@@ -1,6 +1,6 @@
 <template>
     <img 
-        class="lg:object-cover lg:brightness-1/2" 
+        class="lg:object-cover md:brightness-1/2" 
         src="../../assets/background.png" 
         alt="background">
 </template>
@@ -15,8 +15,8 @@ export default defineComponent({
 
 <style>
 
-@media (min-width: 1024px) {
-    .lg\:brightness-1\/2{
+@media (min-width: 768px) {
+    .md\:brightness-1\/2{
         filter: brightness(0.5)
     }
 }

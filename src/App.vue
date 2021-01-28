@@ -91,7 +91,14 @@ import {
   getCodewarsUser
 } from './providers/request/codewars'
 
+import {
+  getStoreData,
+  updateStore
+} from './shared/utils/storage/local-db'
+
 import { CupertinoPane } from 'cupertino-pane';
+import { IGithubUser, IGithubUserRepo } from './models/github.models';
+import { ICodewarsUser } from './models/codewars.model';
 
 export default defineComponent({
   name: 'App',
@@ -127,9 +134,28 @@ export default defineComponent({
     const fetchAll = async () => {
       errorFetching.value = false;
       try{
-        githubUser.value = await getGithubUser();
-        githubUserRepos.value = await getGithubUserRepos();
-        codewarsUser.value = await getCodewarsUser();
+
+        const [f, s, t] = ['devrax:github', 'devrax:github_repo', 'devrax:codewars'];
+        const getUpdate = async (tk: 'devrax:github' | 'devrax:github_repo' | 'devrax:codewars' | string) => {
+          let temp1 = null;
+          switch(tk) {
+            case f:
+              temp1 = await getGithubUser();
+              return await updateStore(f, temp1);
+            case s:
+              temp1 = await getGithubUserRepos();
+              return await updateStore(s, temp1);
+            case t:
+              temp1 = await getCodewarsUser();
+              return await updateStore(t, temp1);
+            default:
+              return;
+          }
+        }
+        
+        githubUser.value =  await getStoreData(f) as IGithubUser || await getUpdate(f);
+        githubUserRepos.value = await getStoreData(s) as IGithubUserRepo[] || await getUpdate(s);
+        codewarsUser.value = await getStoreData(t) as ICodewarsUser || await getUpdate(t);
         
       } catch(e) {
         console.error(e);
