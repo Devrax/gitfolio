@@ -1,8 +1,11 @@
 <template>
-    <img 
+    <transition appear name="fade">
+        <img
+        v-if="true"
         class="lg:object-cover md:brightness-1/2" 
         src="../../assets/background.png" 
         alt="background">
+    </transition>
 </template>
 
 <script lang="ts">
