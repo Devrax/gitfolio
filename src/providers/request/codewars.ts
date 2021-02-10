@@ -6,7 +6,7 @@ const APIURL = `https://www.codewars.com/api/v1`;
 const APIKEY = 'yd5fey-RPVqViXyhp7vm';
 const USER = 'Devrax';
 
-const STOREUSER = ref<ICodewarsUser>(null);
+const STOREUSER = ref<ICodewarsUser | null>(null);
 
 const headers: Headers = new Headers({ 
     Authorization: APIKEY, 

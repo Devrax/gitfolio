@@ -2,7 +2,7 @@
     <transition appear name="fade">
         <img
         v-if="true"
-        class="lg:object-cover md:brightness-1/2" 
+        class="lg:object-cover md:brightness-1/2 w-full" 
         src="../../assets/background.png" 
         alt="background">
     </transition>

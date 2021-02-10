@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, Ref, toRefs } from 'vue';
+import { computed, ComputedRef, defineComponent, PropType, Ref, toRefs } from 'vue';
 import CodewarsBar from '../common/CodewarsBar.vue';
 import { ICodewarsUser, IOverall} from '../../models/codewars.model';
 
@@ -32,7 +32,7 @@ export default defineComponent({
 
         const { stats: { value: { ranks }} } = toRefs(props as {stats: ICodewarsUser});
         
-        const languageEntries = computed(() => {
+        const languageEntries: ComputedRef<[string, IOverall][]> = computed(() => {
             return [['overall', ranks.overall], ...Object.entries(ranks.languages)];
         })
 
