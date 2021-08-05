@@ -1,6 +1,6 @@
 <template>
     <div class="ghost">
-        <div class="flex overflow-x-scroll snap snap-proximity snap-x">
+        <div class="flex custom-scrollbar custom-scrollbar--trim-bottom overflow-x-scroll snap snap-proximity snap-x">
             <div style="min-width: 5px; height: 200px;" class="mr-2"></div>
             <GithubProjectCard
                 v-for="project in byStars" 
