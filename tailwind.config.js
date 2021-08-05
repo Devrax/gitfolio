@@ -53,7 +53,6 @@ const extendedColors = {
 
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
